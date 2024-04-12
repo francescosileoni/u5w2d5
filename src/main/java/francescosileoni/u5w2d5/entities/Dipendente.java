@@ -32,15 +32,14 @@ public class Dipendente {
     @OneToMany(mappedBy = "dipendente")
     private List<Dispositivo> dispositivi = new ArrayList<>();
 
-    public Dipendente (String cognome, String email,  String immagineUrl, String nome, String username) {
+    public Dipendente(String cognome, List<Dispositivo> dispositivi, String email, int id, String immagineUrl, String nome, String username) {
         this.cognome = cognome;
+        this.dispositivi = dispositivi;
         this.email = email;
+        this.id = id;
         this.immagineUrl = immagineUrl;
         this.nome = nome;
         this.username = username;
-    }
-
-    public <E> Dipendente(String username, String nome, String cognome, String email, String s, ArrayList<E> es) {
     }
 }
 
